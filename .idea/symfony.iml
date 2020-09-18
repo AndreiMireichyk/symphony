@@ -6,9 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/application/tests" isTestSource="true" packagePrefix="App\Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/baldinof/roadrunner-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/composer" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/dflydev/fig-cookies" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/doctrine/collections" />
@@ -26,27 +24,22 @@
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/doctrine/reflection" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/doctrine/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/egulias/email-validator" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/laminas/laminas-diactoros" />
+      <excludeFolder url="file://$MODULE_DIR$/application/vendor/laminas/laminas-code" />
+      <excludeFolder url="file://$MODULE_DIR$/application/vendor/laminas/laminas-eventmanager" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/ocramius/proxy-manager" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/php-http/discovery" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/phpdocumentor/type-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/psr/event-dispatcher" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/psr/http-factory" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/psr/http-message" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/psr/http-server-handler" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/psr/http-server-middleware" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/psr/link" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/sensio/framework-extra-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/spiral/goridge" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/spiral/roadrunner" />
+      <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/apache-pack" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/asset" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/browser-kit" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/cache" />
@@ -93,7 +86,6 @@
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/property-access" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/property-info" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/proxy-manager-bridge" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/psr-http-message-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/security-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/security-core" />
@@ -116,9 +108,8 @@
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/twig/extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/application/vendor/webimpress/safe-writer" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/webmozart/assert" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/zendframework/zend-code" />
-      <excludeFolder url="file://$MODULE_DIR$/application/vendor/zendframework/zend-eventmanager" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

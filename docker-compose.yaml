@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    links:
+      - app
+    volumes:
+      - ./application:/application
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/log:/var/log/nginx
+    ports:
+      - 80:80
+      - 443:443
+  app:
+    build: ./application
+    container_name: app
+    restart: always
+    links:
+      - db
+    volumes:
+      - ./application:/application
+    environment:
+      APP_ENV: 'dev'
+      APP_DEBUG: 1
+      DATABASE_URL: 'mysql://dev:dev@mysql:3306/dev'
+      PHP_IDE_CONFIG: 'serverName=docker'
+      XDEBUG_CONFIG: 'app'
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+    - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
