@@ -1,19 +1,25 @@
 FROM php:7.4-fpm
+
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
+        libicu-dev \
         git \
-        zip  \
-        unzip  \
+        zip \
+        unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install -j$(nproc) gd mysqli pdo pdo_mysql intl sockets opcache\
     && pecl install xdebug-2.8.1 \
     && docker-php-ext-enable xdebug \
     && mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
 WORKDIR /application
+
 COPY . .
+
 RUN rm -rf vendor \
     && rm -rf var/cache/* \
     && rm -rf var/log/* \
@@ -27,4 +33,8 @@ RUN rm -rf vendor \
     && chown www-data:www-data /application/var -R \
     && chown www-data:www-data /application/public -R
 
-CMD ["php-fpm"]
+RUN ./vendor/bin/rr get-binary --location /usr/local/bin/
+
+EXPOSE 8080
+
+CMD ["rr", "serve"]

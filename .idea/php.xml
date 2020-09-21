@@ -106,6 +106,17 @@
       <path value="$PROJECT_DIR$/application/vendor/doctrine/orm" />
       <path value="$PROJECT_DIR$/application/vendor/doctrine/common" />
       <path value="$PROJECT_DIR$/application/vendor/symfony/apache-pack" />
+      <path value="$PROJECT_DIR$/application/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/application/vendor/dflydev/fig-cookies" />
+      <path value="$PROJECT_DIR$/application/vendor/laminas/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/application/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/application/vendor/psr/http-server-middleware" />
+      <path value="$PROJECT_DIR$/application/vendor/psr/http-server-handler" />
+      <path value="$PROJECT_DIR$/application/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/application/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/application/vendor/baldinof/roadrunner-bundle" />
+      <path value="$PROJECT_DIR$/application/vendor/spiral/roadrunner" />
+      <path value="$PROJECT_DIR$/application/vendor/spiral/goridge" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

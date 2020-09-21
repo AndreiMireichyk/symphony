@@ -1,20 +1,6 @@
 version: '3'
 
 services:
-
-  nginx:
-    image: nginx:latest
-    container_name: nginx
-    restart: always
-    links:
-      - app
-    volumes:
-      - ./application:/application
-      - ./nginx/conf:/etc/nginx/conf.d
-      - ./nginx/log:/var/log/nginx
-    ports:
-      - 80:80
-      - 443:443
   app:
     build: ./application
     container_name: app
@@ -23,12 +9,11 @@ services:
       - db
     volumes:
       - ./application:/application
-    environment:
-      APP_ENV: 'dev'
-      APP_DEBUG: 1
-      DATABASE_URL: 'mysql://dev:dev@mysql:3306/dev'
-      PHP_IDE_CONFIG: 'serverName=docker'
-      XDEBUG_CONFIG: 'app'
+      - /application/var
+      - ./application/var/log:/application/var/log
+      - ./application/var/cache:/application/var/cache
+    ports:
+    - 80:8080
 
   db:
     image: mysql
@@ -38,3 +23,6 @@ services:
     - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
+    volumes:
+    - ./database/data:/var/lib/mysql
+    - ./database/log:/var/log/mysql
