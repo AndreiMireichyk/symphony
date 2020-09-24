@@ -6,7 +6,10 @@
             "branch": "master",
             "version": "1.2",
             "ref": "47c159c44eb9e6902828da4acbb4199757dd378f"
-        }
+        },
+        "files": [
+            "./config/packages/baldinof_road_runner.yaml"
+        ]
     },
     "composer/package-versions-deprecated": {
         "version": "1.11.99"

@@ -8,9 +8,9 @@ RUN apt-get update && apt-get install -y \
         git \
         zip \
         unzip \
+    && pecl install xdebug-2.8.1 \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd mysqli pdo pdo_mysql intl sockets opcache\
-    && pecl install xdebug-2.8.1 \
     && docker-php-ext-enable xdebug \
     && mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
@@ -32,6 +32,7 @@ RUN rm -rf vendor \
     && chown www-data:www-data /application \
     && chown www-data:www-data /application/var -R \
     && chown www-data:www-data /application/public -R
+
 
 RUN ./vendor/bin/rr get-binary --location /usr/local/bin/
 

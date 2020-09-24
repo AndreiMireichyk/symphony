@@ -11,3 +11,13 @@ http:
 static:
   dir:   "public"
   forbid: [".php", ".htaccess"]
+
+reload:
+  enabled: true
+  interval: 1s
+  patterns: [".php"]
+  services:
+    http:
+      dirs: ["."]
+      recursive: true
+
