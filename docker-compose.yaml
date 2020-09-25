@@ -12,10 +12,10 @@ services:
       - /application/var
       - ./application/var/log:/application/var/log
       - ./application/var/cache:/application/var/cache
+      - ./php/php-dev.ini:/usr/local/etc/php/php.ini
     ports:
       - 80:8080
-    environment:
-      XDEBUG_CONFIG: "host.docker.internal"
+      - 9000:9000
 
   db:
     image: mysql

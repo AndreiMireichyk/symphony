@@ -9,7 +9,12 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class AppTest extends WebTestCase
 {
 
-    public function firstTest(){
+    public function firstTest()
+    {
+        $a = [
+            'a' => true
+        ];
+
         return;
     }
 

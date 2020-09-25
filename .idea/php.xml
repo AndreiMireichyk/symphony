@@ -127,7 +127,7 @@
             <item value="$PROJECT_DIR$/docker-compose.yaml" />
           </dockerComposeConfigurationPaths>
           <envs />
-          <type_data command="EXEC" />
+          <type_data command="RUN" />
         </remote_data>
       </interpreter>
     </interpreters>
@@ -195,7 +195,7 @@
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
   <component name="PhpUnit">
     <phpunit_settings>
-      <PhpUnitSettings load_method="PHPUNIT_PHAR" configuration_file_path="$PROJECT_DIR$/application/phpunit.xml.dist" custom_loader_path="$PROJECT_DIR$/application/vendor/autoload.php" phpunit_phar_path="$PROJECT_DIR$/application/bin/phpunit" use_configuration_file="true" />
+      <phpunit_by_interpreter interpreter_id="095ea2b5-3e74-4770-a544-89c14476f258" load_method="PHPUNIT_PHAR" configuration_file_path="/application/phpunit.xml.dist" custom_loader_path="" phpunit_phar_path="/application/bin/phpunit" use_configuration_file="true" />
     </phpunit_settings>
   </component>
 </project>
