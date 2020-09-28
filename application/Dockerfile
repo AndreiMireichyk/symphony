@@ -21,19 +21,18 @@ WORKDIR /application
 COPY . .
 
 RUN rm -rf vendor \
-    && rm -rf var/cache/* \
-    && rm -rf var/log/* \
-    && rm -rf var/sessions/* \
-    && composer install \
-    && composer dump-autoload --optimize \
-    && bin/console cache:clear \
-    && bin/console cache:warmup \
-    && chmod +x /application/bin/* \
-    && chown www-data:www-data /application \
-    && chown www-data:www-data /application/var -R \
-    && chown www-data:www-data /application/public -R
-
-
+	&& rm -rf var/cache/* \
+	&& rm -rf var/log/* \
+	&& rm -rf var/sessions/* \
+	&& composer install \
+	&& composer dump-autoload --optimize \
+	&& bin/console cache:clear \
+	&& bin/console cache:warmup \
+	&& chmod +x /application/bin/* \
+	&& chown www-data:www-data /application \
+	&& chown www-data:www-data /application/var -R \
+	&& chown www-data:www-data /application/public -R
+	
 RUN ./vendor/bin/rr get-binary --location /usr/local/bin/
 
 EXPOSE 8080
