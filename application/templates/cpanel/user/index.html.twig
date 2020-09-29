@@ -1,0 +1,12 @@
+
+<table>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+    </tr>
+    {% else %}
+    <div> not results</div>
+    {% endfor %}
+</table>

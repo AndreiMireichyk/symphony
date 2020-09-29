@@ -1,20 +1,62 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}Hello BlogBlogController!{% endblock %}
+{% block title %}Hola{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+{% block css %}
+    {{ parent() }}
+    <link href="{{ asset('/blog/css/article.css') }}" rel="stylesheet">
+{% endblock %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% block js %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('blog/js/article.bundle.js') }}"></script>
+{% endblock %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/application/src/Controller/BlogBlogController.php'|file_link(0) }}">src/Controller/BlogBlogController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/application/templates/blog_blog/index.html.twig'|file_link(0) }}">templates/blog_blog/index.html.twig</a></code></li>
-    </ul>
-</div>
+{% block content %}
+    <main class="article">
+        <section class="article__cover">
+            <h1 class="article__title">BiXBiT participated in Bitmain's World Digital Mining Summit 2019</h1>
+            <div class="article__socials socials"><a class="socials__item fb" href="javascript:void(0)"></a><a class="socials__item tw" href="javascript:void(0)"></a><a class="socials__item in" href="javascript:void(0)"></a></div>
+        </section>
+        <section class="article__main">
+            <div class="article__content">The unique construction of the BiXBiT installation has been patented in Russia and Belarus The unique construction of the BiXBiT installation has been patented in Russia and Belarus  The unique construction of the BiXBiT installation has been patented in Russia and Belarus The unique construction of the BiXBiT installation has been patented in Russia and Belarus The unique construction of the BiXBiT installation has been patented in Russia and Belarus The unique construction of the BiXBiT installation has been patented in Russia and Belarus The unique construction of the BiXBiT installation has been patented in Russia and Belarus</div>
+            <div class="article__group">
+                <div class="article__published">Publication date: 6 months ago</div>
+                <div class="article__socials socials"><a class="socials__item fb-c" href="javascript:void(0)"></a><a class="socials__item tw-c" href="javascript:void(0)"></a><a class="socials__item in-c" href="javascript:void(0)"></a></div>
+            </div>
+            <div class="article__categories categories"><a class="categories__item" href="">meditation</a><a class="categories__item" href="">affirmation</a></div>
+        </section>
+        <section class="article__aside">
+            <div class="collection">
+                <div class="collection__title">Latest news</div>
+                <div class="collection__list">
+                    <div class="collection__item">
+                        <div class="collection__num">1</div>
+                        <div class="collection__info"><a class="collection__article">The unique construction of the BiXBiT installation has been patented in Russia and Belarus</a><a class="collection__category">BiXBiT</a></div>
+                    </div>
+                    <div class="collection__item">
+                        <div class="collection__num">2</div>
+                        <div class="collection__info"><a class="collection__article">The unique construction of the BiXBiT installation has been patented in Russia and Belarus</a><a class="collection__category">BiXBiT</a></div>
+                    </div>
+                    <div class="collection__item">
+                        <div class="collection__num">3</div>
+                        <div class="collection__info"><a class="collection__article">The unique construction of the BiXBiT installation has been patented in Russia and Belarus</a><a class="collection__category">BiXBiT</a></div>
+                    </div>
+                    <div class="collection__item">
+                        <div class="collection__num">4</div>
+                        <div class="collection__info"><a class="collection__article">The unique construction of the BiXBiT installation has been patented in Russia and Belarus</a><a class="collection__category">BiXBiT</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="collection">
+                <div class="collection__title">Related materials:</div>
+                <div class="collection__list">
+                    <div class="collection__item">
+                        <div class="collection__num">1</div>
+                        <div class="collection__info"><a class="collection__article">The unique construction of the BiXBiT installation has been patented in Russia and Belarus</a><a class="collection__category">BiXBiT</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}

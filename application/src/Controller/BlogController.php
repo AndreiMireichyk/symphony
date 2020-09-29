@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class BlogController extends AbstractController
@@ -12,8 +13,13 @@ class BlogController extends AbstractController
      */
     public function index()
     {
-        return $this->render('blog/index.html.twig', [
-            'controller_name' => 'BlogController',
-        ]);
+        return $this->render('blog/index.html.twig');
+    }
+
+    /**
+     * @Route("/blog/{slug}", name="blog.article")x
+     */
+    public function article($slug){
+       return $this->render('blog/article.html.twig');
     }
 }
