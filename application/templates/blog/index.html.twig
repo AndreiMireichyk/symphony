@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+    {% block title %}Hola{% endblock %}
+
+    {% block css %}
+        {{ parent() }}
+        <link href="{{ asset('/blog/css/blog.css') }}" rel="stylesheet">
+    {% endblock %}
+
+    {% block js %}
+        {{ parent() }}
+        <script type="text/javascript" src="{{ asset('blog/js/blog.bundle.js') }}"></script>
+    {% endblock %}
+
+

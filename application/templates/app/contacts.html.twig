@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+
+    {% block title %}Contacts{% endblock %}
+
+    {% block css %}
+        {{ parent() }}
+        <link href="{{ asset('/blog/css/contacts.css') }}" rel="stylesheet">
+    {% endblock %}
+
+    {% block js %}
+        {{ parent() }}
+        <script type="text/javascript" src="{{ asset('blog/js/contacts.bundle.js') }}"></script>
+    {% endblock %}
+
+     {% block content %}
+         <main class="contacts">
+             <div class="contacts__wrap">
+                 <div class="contacts__address address">
+                     <div class="address__title">Address</div>
+                     <a class="address__point" href="">2715 Hidden Road, bld 8, California, USA</a><a
+                             class="address__point" href="">info@hypnopedia.site</a>
+                     <div class="address__socials">
+                         <a class="address__social fb" href="#" target="_blank">
+                             <img src="{{ asset('/blog/images/fbook.svg') }}" alt="facebook">
+                         </a>
+                         <a class="address__social tw" href="#" target="_blank">
+                             <img src="{{ asset('/blog/images/1200px-Twitter.png') }}" alt="twitter">
+                         </a>
+                     </div>
+                 </div>
+                 <div id="contacts_form"></div>
+             </div>
+         </main>
+     {% endblock %}

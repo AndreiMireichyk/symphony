@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre:400i&amp;display=swap&amp;subset=latin-ext"
+          rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/blog/images/favicon.png') }}">
+
+    <title>{% block title %}Hello BlogController!{% endblock %}</title>
+    <meta name="description" content="{% block meta_desc %}Hello BlogController!{% endblock %}">
+    {% block css %}
+        <link href="{{ asset('/blog/css/common.css') }}" rel="stylesheet">
+    {% endblock %}
+</head>
+
+<body>
+{% block header %}
+    <header class="header {{ app.request.get('_route') in ['blog.index', 'blog.category', 'blog.article'] ? 'light' : '' }}">
+        <div class="header__wrap">
+            <a class="header__logo" href="{{ path('app.home') }}">
+                <img class="normal" src="{{ asset('/blog/images/logo-v1.svg') }}" alt="logo">
+                <img class="light" src="{{ asset('/blog/images/logo-light.svg') }}" alt="logo">
+            </a>
+            <a class="header__toggle"></a>
+            <div class="header__menu">
+                <div class="{{ app.request.get('_route') is same as('app.home') ? 'active' : '' }}">
+                    <a class="header__menu-item" href="/#about" data-menu-spy>About</a></div>
+                <div>
+                    <a class="header__menu-item" href="/#how_it_work" data-menu-spy>HOW IT WORKS</a>
+                </div>
+                <div>
+                    <a class="header__menu-item" href="/#features" data-menu-spy>FEATURES</a>
+                </div>
+                <div>
+                    <a class="header__menu-item" href="/#science" data-menu-spy>SCIENCE</a>
+                </div>
+                <div>
+                    <a class="header__menu-item" href="#faq" data-menu-spy>FAQ</a>
+                </div>
+                <div>
+                    <a class="header__menu-item {{ app.request.get('_route')  in ['blog.index', 'blog.category', 'blog.article'] ? 'active' : '' }}"
+                       href="{{ path('blog.index') }}"
+                       data-menu-spy
+                    >
+                       BLOG
+                    </a>
+                </div>
+                <div>
+                    <a class="header__menu-item" href="{{ path('app.contacts') }}">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+{% block content %}
+ ...
+{% endblock %}
+{% block footer %}
+    <footer class="footer">
+        <div class="footer__wrap">
+            <div class="footer__group">
+                <div class="footer__menu menu">
+                    <a class="menu__item" href="#about"><img src="{{ asset('/blog/images/logo-v1.svg') }}"
+                                                             alt="logo"></a>
+                    <a class="menu__item" href="/assets/docs/PrivacyPolicy.pdf" target="_black">PRIVACY POLICY</a>
+                    <a class="menu__item" href="/assets/docs/Terms&amp;Conditions.pdf" target="_black">TERMS OF
+                        SERVICE</a>
+                    <a class="menu__item" href="https://itunes.apple.com/app/id1274009022" target="_blank">GET THE
+                        APP</a>
+                    <a class="menu__item" href="{{ path('app.contacts') }}">CONTACTS</a>
+                </div>
+                <div class="footer__socials socials">
+                    <a class="menu__item socials__item tw" href="https://www.facebook.com/hypnopedia.application"
+                       target="_blank"></a>
+                    <a class="menu__item socials__item fb" href="https://www.facebook.com/hypnopedia.application"
+                       target="_blank"></a>
+                </div>
+            </div>
+            <a class="footer__badge" href="https://www.producthunt.com/posts/hypnopedia" target="_blank">
+                <img src="{{ asset('/blog/images/ph_badge.svg') }}" alt="product hunt">
+            </a>
+        </div>
+    </footer>
+{% endblock %}
+<div id="widget"></div>
+<a class="scroll_top"></a>
+{% block js %}
+    <script type="text/javascript" src="{{ asset('blog/js/common.bundle.js') }}"></script>
+{% endblock %}
+</body>
+</html>

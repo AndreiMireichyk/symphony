@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Proza+Libre:400i&amp;display=swap&amp;subset=latin-ext"
+          rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/blog/images/favicon.png') }}">
+
+    <title>{% block title %}Hello BlogController!{% endblock %}</title>
+    <meta name="description" content="{% block meta_desc %}Hello BlogController!{% endblock %}">
+    {% block css %}
+        <link href="{{ asset('/blog/css/common.css') }}" rel="stylesheet">
+    {% endblock %}
+</head>
+
+<body>
+{% block header %}
+    <header class="header {{ app.request.get('_route') in ['blog.index', 'blog.category', 'blog.article'] ? 'light' : '' }}">
+        <div class="header__wrap">
+            <a class="header__logo" href="{{ path('app.home') }}">
+                <img class="normal" src="{{ asset('/blog/images/logo-v1.svg') }}" alt="logo">
+                <img class="light" src="{{ asset('/blog/images/logo-light.svg') }}" alt="logo">
+            </a>
+            <a class="header__toggle"></a>
+            <div class="header__menu">
+                <div class="{{ app.request.get('_route') is same as('app.home') ? 'active' : '' }}">
+                    <a class="header__menu-item" href="#about" data-menu-spy>About</a></div>
+                <div>
+                    <a class="header__menu-item" href="#how_it_work" data-menu-spy>HOW IT WORKS</a>
+                </div>
+                <div>
+                    <a class="header__menu-item" href="#features" data-menu-spy>FEATURES</a>
+                </div>
+                <div>
+                    <a class="header__menu-item" href="#science" data-menu-spy>SCIENCE</a>
+                </div>
+                <div>
+                    <a class="header__menu-item" href="#faq" data-menu-spy>FAQ</a>
+                </div>
+                <div>
+                    <a class="header__menu-item {{ app.request.get('_route')  in ['blog.index', 'blog.category', 'blog.article'] ? 'active' : '' }}"
+                       href="{{ path('blog.index') }}"
+                       data-menu-spy
+                    >
+                       BLOG
+                    </a>
+                </div>
+                <div>
+                    <a class="header__menu-item" href="{{ path('app.contacts') }}">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+{% block content %}
+    <main class="blog">
+        <section class="blog__category category">
+            <h1 class="category__title">Mental health</h1>
+            <p class="category__desc">Mental health</p>
+        </section>
+        <section class="blog__categories categories">
+            <div class="categories__tabs nav nav-tabs" role="tablist"><a class="categories__tab active"
+                                                                         data-toggle="tab" href="#home-1">SLEEP</a><a
+                        class="categories__tab" data-toggle="tab" href="#home-2">MOTIVATION</a><a
+                        class="categories__tab" data-toggle="tab" href="#home-3">MENTAL</a><a
+                        class="categories__tab active" data-toggle="tab" href="#home-1">SLEEP</a><a
+                        class="categories__tab" data-toggle="tab" href="#home-2">MOTIVATION</a><a
+                        class="categories__tab" data-toggle="tab" href="#home-3">MENTAL</a><a
+                        class="categories__tab active" data-toggle="tab" href="#home-1">SLEEP</a><a
+                        class="categories__tab" data-toggle="tab" href="#home-2">MOTIVATION</a><a
+                        class="categories__tab" data-toggle="tab" href="#home-3">MENTAL</a><a
+                        class="categories__tab active" data-toggle="tab" href="#home-1">SLEEP</a><a
+                        class="categories__tab" data-toggle="tab" href="#home-2">MOTIVATION</a><a
+                        class="categories__tab" data-toggle="tab" href="#home-3">MENTAL</a><a
+                        class="categories__tab active" data-toggle="tab" href="#home-1">SLEEP</a><a
+                        class="categories__tab" data-toggle="tab" href="#home-2">MOTIVATION</a><a
+                        class="categories__tab" data-toggle="tab" href="#home-3">MENTAL</a></div>
+            <div class="tab-content">
+                <div class="categories__articles top-article tab-pane active" id="home-1" role="tabpanel">
+                    <div class="top-article__left">
+                        <div class="lg-post"><a class="lg-post__cover"
+                                                style="background-image: url('https://i.pinimg.com/originals/cc/11/66/cc11665c0f6565ab973907a73fa7d8b5.jpg')"></a>
+                            <div class="lg-post__title">Sleep deprivation induces fragmented memory loss Sleep
+                                deprivation induces fragmented memory loss Sleep deprivation induces fragmented memory
+                                loss
+                            </div>
+                            <div class="lg-post__desc">During this event, BiXBiT paid more attention to the integration
+                                of our installations in the heating and hot water supply systems of a privaDuring this
+                                event, BiXBiT paid more attention to the integration of our installations in the heating
+                                and hot water supply systems of a privaDuring this event, BiXBiT paid more attention to
+                                the integration of our installations in the heating and hot water supply systems of a
+                                privaDuring this event, BiXBiT paid more attention to the integration of our
+                                installations in the heating and hot water supply systems of a private house, the
+                                prototype of a smart boiler and the development of hosting mining services.
+                            </div>
+                            <div class="lg-post__group">
+                                <div class="lg-post__category">Категория</div>
+                                <div class="lg-post__date">2 MONTHS AGO</div>
+                                <div class="lg-post__read">REA 3 MIN</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-article__right">
+                        <div class="sm-post">
+                            <div class="sm-post__grid"><a class="sm-post__cover"
+                                                          style="background-image: url('https://i.pinimg.com/originals/cc/11/66/cc11665c0f6565ab973907a73fa7d8b5.jpg')"></a>
+                                <div class="sm-post__info"><a class="sm-post__title">Sleep deprivation induces
+                                        fragmented memory loss Sleep deprivation induces fragmented memory loss Sleep
+                                        deprivation induces fragmented memory loss</a>
+                                    <div class="sm-post__desc">During this event, BiXBiT paid more attention to the
+                                        integration of our installations in the heating and hot water supply systems of
+                                        a privaDuring this event, BiXBiT paid more attention to the integration of our
+                                        installations in the heating and hot water supply systems of a privaDuring this
+                                        event, BiXBiT paid more attention to the integration of our installations in the
+                                        heating and hot water supply systems of a privaDuring this event, BiXBiT paid
+                                        more attention to the integration of our installations in the heating and hot
+                                        water supply systems of a private house, the prototype of a smart boiler and the
+                                        development of hosting mining services.
+                                    </div>
+                                    <div class="sm-post__group"><a class="sm-post__category">Категория</a><a
+                                                class="sm-post__date">2 MONTHS AGO</a><a class="sm-post__read">REA 3
+                                            MIN</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm-post">
+                            <div class="sm-post__grid"><a class="sm-post__cover"
+                                                          style="background-image: url('https://i.pinimg.com/originals/cc/11/66/cc11665c0f6565ab973907a73fa7d8b5.jpg')"></a>
+                                <div class="sm-post__info"><a class="sm-post__title">Sleep deprivation induces
+                                        fragmented memory loss Sleep deprivation induces fragmented memory loss Sleep
+                                        deprivation induces fragmented memory loss</a>
+                                    <div class="sm-post__desc">During this event, BiXBiT paid more attention to the
+                                        integration of our installations in the heating and hot water supply systems of
+                                        a privaDuring this event, BiXBiT paid more attention to the integration of our
+                                        installations in the heating and hot water supply systems of a privaDuring this
+                                        event, BiXBiT paid more attention to the integration of our installations in the
+                                        heating and hot water supply systems of a privaDuring this event, BiXBiT paid
+                                        more attention to the integration of our installations in the heating and hot
+                                        water supply systems of a private house, the prototype of a smart boiler and the
+                                        development of hosting mining services.
+                                    </div>
+                                    <div class="sm-post__group"><a class="sm-post__category">Категория</a><a
+                                                class="sm-post__date">2 MONTHS AGO</a><a class="sm-post__read">REA 3
+                                            MIN</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm-post">
+                            <div class="sm-post__grid"><a class="sm-post__cover"
+                                                          style="background-image: url('https://i.pinimg.com/originals/cc/11/66/cc11665c0f6565ab973907a73fa7d8b5.jpg')"></a>
+                                <div class="sm-post__info"><a class="sm-post__title">Sleep deprivation induces
+                                        fragmented memory loss Sleep deprivation induces fragmented memory loss Sleep
+                                        deprivation induces fragmented memory loss</a>
+                                    <div class="sm-post__desc">During this event, BiXBiT paid more attention to the
+                                        integration of our installations in the heating and hot water supply systems of
+                                        a privaDuring this event, BiXBiT paid more attention to the integration of our
+                                        installations in the heating and hot water supply systems of a privaDuring this
+                                        event, BiXBiT paid more attention to the integration of our installations in the
+                                        heating and hot water supply systems of a privaDuring this event, BiXBiT paid
+                                        more attention to the integration of our installations in the heating and hot
+                                        water supply systems of a private house, the prototype of a smart boiler and the
+                                        development of hosting mining services.
+                                    </div>
+                                    <div class="sm-post__group"><a class="sm-post__category">Категория</a><a
+                                                class="sm-post__date">2 MONTHS AGO</a><a class="sm-post__read">REA 3
+                                            MIN</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top-article__bootom"><a class="top-article__btn">All articles</a></div>
+                </div>
+            </div>
+        </section>
+        <section class="blog__title">Latest news</section>
+        <section class="blog__body body">
+            <div class="body__main">
+                <div class="body__post md-post"><a class="md-post__cover"
+                                                   style="background-image: url('https://i.pinimg.com/originals/cc/11/66/cc11665c0f6565ab973907a73fa7d8b5.jpg')"></a>
+                    <div class="md-post__title">Sleep deprivation induces fragmented memory loss Sleep deprivation
+                        induces fragmented memory loss Sleep deprivation induces fragmented memory loss
+                    </div>
+                    <div class="md-post__desc">During this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a privaDuring this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a private house, the prototype of a smart boiler and the development of hosting
+                        mining services.
+                    </div>
+                    <div class="md-post__group">
+                        <div class="md-post__category">Категория</div>
+                        <div class="md-post__date">2 MONTHS AGO</div>
+                        <div class="md-post__read">REA 3 MIN</div>
+                    </div>
+                </div>
+                <div class="body__post md-post"><a class="md-post__cover"
+                                                   style="background-image: url('https://i.pinimg.com/originals/cc/11/66/cc11665c0f6565ab973907a73fa7d8b5.jpg')"></a>
+                    <div class="md-post__title">Sleep deprivation induces fragmented memory loss Sleep deprivation
+                        induces fragmented memory loss Sleep deprivation induces fragmented memory loss
+                    </div>
+                    <div class="md-post__desc">During this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a privaDuring this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a private house, the prototype of a smart boiler and the development of hosting
+                        mining services.
+                    </div>
+                    <div class="md-post__group">
+                        <div class="md-post__category">Категория</div>
+                        <div class="md-post__date">2 MONTHS AGO</div>
+                        <div class="md-post__read">REA 3 MIN</div>
+                    </div>
+                </div>
+                <div class="body__post md-post"><a class="md-post__cover"
+                                                   style="background-image: url('https://i.pinimg.com/originals/cc/11/66/cc11665c0f6565ab973907a73fa7d8b5.jpg')"></a>
+                    <div class="md-post__title">Sleep deprivation induces fragmented memory loss Sleep deprivation
+                        induces fragmented memory loss Sleep deprivation induces fragmented memory loss
+                    </div>
+                    <div class="md-post__desc">During this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a privaDuring this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a private house, the prototype of a smart boiler and the development of hosting
+                        mining services.
+                    </div>
+                    <div class="md-post__group">
+                        <div class="md-post__category">Категория</div>
+                        <div class="md-post__date">2 MONTHS AGO</div>
+                        <div class="md-post__read">REA 3 MIN</div>
+                    </div>
+                </div>
+                <div class="body__post md-post"><a class="md-post__cover"
+                                                   style="background-image: url('https://i.pinimg.com/originals/cc/11/66/cc11665c0f6565ab973907a73fa7d8b5.jpg')"></a>
+                    <div class="md-post__title">Sleep deprivation induces fragmented memory loss Sleep deprivation
+                        induces fragmented memory loss Sleep deprivation induces fragmented memory loss
+                    </div>
+                    <div class="md-post__desc">During this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a privaDuring this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a private house, the prototype of a smart boiler and the development of hosting
+                        mining services.
+                    </div>
+                    <div class="md-post__group">
+                        <div class="md-post__category">Категория</div>
+                        <div class="md-post__date">2 MONTHS AGO</div>
+                        <div class="md-post__read">REA 3 MIN</div>
+                    </div>
+                </div>
+                <div class="body__post md-post"><a class="md-post__cover"
+                                                   style="background-image: url('https://i.pinimg.com/originals/cc/11/66/cc11665c0f6565ab973907a73fa7d8b5.jpg')"></a>
+                    <div class="md-post__title">Sleep deprivation induces fragmented memory loss Sleep deprivation
+                        induces fragmented memory loss Sleep deprivation induces fragmented memory loss
+                    </div>
+                    <div class="md-post__desc">During this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a privaDuring this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a private house, the prototype of a smart boiler and the development of hosting
+                        mining services.
+                    </div>
+                    <div class="md-post__group">
+                        <div class="md-post__category">Категория</div>
+                        <div class="md-post__date">2 MONTHS AGO</div>
+                        <div class="md-post__read">REA 3 MIN</div>
+                    </div>
+                </div>
+                <div class="body__post md-post"><a class="md-post__cover"
+                                                   style="background-image: url('https://i.pinimg.com/originals/cc/11/66/cc11665c0f6565ab973907a73fa7d8b5.jpg')"></a>
+                    <div class="md-post__title">Sleep deprivation induces fragmented memory loss Sleep deprivation
+                        induces fragmented memory loss Sleep deprivation induces fragmented memory loss
+                    </div>
+                    <div class="md-post__desc">During this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a privaDuring this event, BiXBiT paid more attention to the integration of our
+                        installations in the heating and hot water supply systems of a privaDuring this event, BiXBiT
+                        paid more attention to the integration of our installations in the heating and hot water supply
+                        systems of a private house, the prototype of a smart boiler and the development of hosting
+                        mining services.
+                    </div>
+                    <div class="md-post__group">
+                        <div class="md-post__category">Категория</div>
+                        <div class="md-post__date">2 MONTHS AGO</div>
+                        <div class="md-post__read">REA 3 MIN</div>
+                    </div>
+                </div>
+            </div>
+            <div class="body__aside">
+                <div class="aside">
+                    <div class="aside__title">Popular articles</div>
+                    <div class="popular">
+                        <div class="popular__item">
+                            <div class="popular__num">1</div>
+                            <div class="popular__group">
+                                <div class="popular__title">The Case for Doing Less</div>
+                                <div class="popular__category">MEDITATION</div>
+                            </div>
+                        </div>
+                        <div class="popular__item">
+                            <div class="popular__num">2</div>
+                            <div class="popular__group">
+                                <div class="popular__title">The speech in the sleeping brain</div>
+                                <div class="popular__category">MEDITATION</div>
+                            </div>
+                        </div>
+                        <div class="popular__item">
+                            <div class="popular__num">3</div>
+                            <div class="popular__group">
+                                <div class="popular__title">How Facebook Has Flattened Human Communication</div>
+                                <div class="popular__category">MEDITATION</div>
+                            </div>
+                        </div>
+                        <div class="popular__item">
+                            <div class="popular__num">4</div>
+                            <div class="popular__group">
+                                <div class="popular__title">The Case for Doing Less</div>
+                                <div class="popular__category">MEDITATION</div>
+                            </div>
+                        </div>
+                        <div class="popular__item">
+                            <div class="popular__num">5</div>
+                            <div class="popular__group"><a class="popular__title">The Case for Doing Less</a><a
+                                        class="popular__category">MEDITATION</a></div>
+                        </div>
+                    </div>
+                    <div class="aside__title">Tags</div>
+                    <div class="aside-cat"><a class="aside-cat__item">SLEEP</a><a class="aside-cat__item">MENTAL
+                            HEALTH</a><a class="aside-cat__item">MEMORY</a><a class="aside-cat__item">HAPPINESS</a><a
+                                class="aside-cat__item">MINDFULLNESS</a></div>
+                </div>
+            </div>
+        </section>
+        <section class="blog__pagination pagination"><a class="pagination__prev"></a><a class="pagination__page active">1</a><a
+                    class="pagination__page">2</a><a class="pagination__page">3</a><a class="pagination__page">4</a><a
+                    class="pagination__next"></a></section>
+    </main>
+{% endblock %}
+{% block footer %}
+    <footer class="footer">
+        <div class="footer__wrap">
+            <div class="footer__group">
+                <div class="footer__menu menu">
+                    <a class="menu__item" href="#about"><img src="{{ asset('/blog/images/logo-v1.svg') }}"
+                                                             alt="logo"></a>
+                    <a class="menu__item" href="/assets/docs/PrivacyPolicy.pdf" target="_black">PRIVACY POLICY</a>
+                    <a class="menu__item" href="/assets/docs/Terms&amp;Conditions.pdf" target="_black">TERMS OF
+                        SERVICE</a>
+                    <a class="menu__item" href="https://itunes.apple.com/app/id1274009022" target="_blank">GET THE
+                        APP</a>
+                    <a class="menu__item" href="{{ path('app.contacts') }}">CONTACTS</a>
+                </div>
+                <div class="footer__socials socials">
+                    <a class="menu__item socials__item tw" href="https://www.facebook.com/hypnopedia.application"
+                       target="_blank"></a>
+                    <a class="menu__item socials__item fb" href="https://www.facebook.com/hypnopedia.application"
+                       target="_blank"></a>
+                </div>
+            </div>
+            <a class="footer__badge" href="https://www.producthunt.com/posts/hypnopedia" target="_blank">
+                <img src="{{ asset('/blog/images/ph_badge.svg') }}" alt="product hunt">
+            </a>
+        </div>
+    </footer>
+{% endblock %}
+<div id="widget"></div>
+{% block js %}
+    <script type="text/javascript" src="{{ asset('blog/js/common.bundle.js') }}"></script>
+{% endblock %}
+</body>
+</html>
